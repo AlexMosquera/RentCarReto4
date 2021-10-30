@@ -81,9 +81,9 @@ public class ServiciosReservas {
     }
     public StatusReservas reporteStatusServicio (){
         List<Reservas>completed= metodosCrud.ReservacionStatusRepositorio("completed");
-        List<Reservas>cancelled= metodosCrud.ReservacionStatusRepositorio("cancelled");
+        List<Reservas>canceled= metodosCrud.ReservacionStatusRepositorio("canceled");
         
-        return new StatusReservas(completed.size(), cancelled.size() );
+        return new StatusReservas(completed.size(), canceled.size() );
     }
     public List<Reservas> reporteTiempoServicio (String datoA, String datoB){
         SimpleDateFormat parser = new SimpleDateFormat ("yyyy-MM-dd");

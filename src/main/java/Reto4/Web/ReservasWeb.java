@@ -5,6 +5,8 @@
 package Reto4.Web;
 
 import Reto4.Entidades.Reservas;
+import Reto4.Reportes.ContadorClientes;
+import Reto4.Reportes.StatusReservas;
 import Reto4.Servicios.ServiciosReservas;
 import java.util.List;
 import java.util.Optional;
@@ -59,4 +61,18 @@ public class ReservasWeb {
     public boolean delete(@PathVariable("id") int reservationidReservation) {
         return servicios.deleteReservation(reservationidReservation);
     }
+    @GetMapping("/report-status")
+    public StatusReservas getReservas(){
+        return servicios.reporteStatusServicio();
+    }
+    
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+     public List<Reservas> getReservasTiempo (@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo ){
+         return servicios.reporteTiempoServicio(dateOne, dateTwo);
+     }
+     
+     @GetMapping("/report-clients")
+     public List<ContadorClientes> getClientes(){
+         return servicios.reporteClientesServicio();
+     }
 }

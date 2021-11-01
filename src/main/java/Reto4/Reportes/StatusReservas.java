@@ -10,11 +10,11 @@ package Reto4.Reportes;
  */
 public class StatusReservas {
     private int completed;
-    private int canceled;
+    private int cancelled;
 
-    public StatusReservas(int completed, int canceled) {
+    public StatusReservas(int completed, int cancelled) {
         this.completed = completed;
-        this.canceled = canceled;
+        this.cancelled = cancelled;
     }
 
     public int getCompleted() {
@@ -25,12 +25,14 @@ public class StatusReservas {
         this.completed = completed;
     }
 
-    public int getCanceled() {
-        return canceled;
+    public int getCancelled() {
+        return cancelled;
     }
 
-    public void setCanceled(int canceled) {
-        this.canceled = canceled;
+    public void setCancelled(int cancelled) {
+        this.cancelled = cancelled;
     }
+
+    
        
 }
